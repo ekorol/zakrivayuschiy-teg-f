@@ -1,1 +1,15 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /** Шрифты **/
+  --main-font: "Inter";
+  --accent-font: "PressStart2P";
+  --card-title-weight: "wght" 700;
+  --card-text-weight: "wght" 400;
+  --card-label-out-color: #fff;
+  --contour: #000;
+  --heart-accent: #FF0000;
+  --background-pattern: url("../images/bg-pattern.png"),
+    repeating-linear-gradient(to right, #d3d3d3 2px, transparent 2px),
+    repeating-linear-gradient(to bottom, #d3d3d3 2px, transparent 2px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+}

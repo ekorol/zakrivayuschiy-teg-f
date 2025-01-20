@@ -7,7 +7,7 @@
   --card-text-weight: "wght" 400;
   --card-label-out-color: #fff;
   --contour: #000;
-  --heart-accent: #FF0000;
+  --heart-accent: #ff0000;
   --background-pattern: url("../images/bg-pattern.png"),
     repeating-linear-gradient(to right, #d3d3d3 2px, transparent 2px),
     repeating-linear-gradient(to bottom, #d3d3d3 2px, transparent 2px),

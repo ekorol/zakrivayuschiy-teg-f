@@ -324,14 +324,6 @@
   cursor: pointer;
 }
 
-.main__save-button:hover .save-text {
-  position: relative;
-  z-index: 2;
-  mix-blend-mode: difference;
-  color: #fff;
-  transition: color 0.5s ease-in-out;
-}
-
 .save-button {
   display: flex;
   font-family: var(--accent-font);
@@ -376,7 +368,8 @@
 }
 
 .main__save-button:hover .save-text {
-  fill: #fff;
+  mix-blend-mode: difference;
+  color: #fff;
   z-index: 2;
   position: relative;
   display: inline-block;

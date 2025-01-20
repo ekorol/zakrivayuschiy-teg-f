@@ -17,7 +17,7 @@
   font-variation-settings: var(--card-text-weight);
   background-image: var(--background-pattern);
   background-attachment: fixed;
-  background-size: 4px;
+  background-size: cover;
 }
 
 .header {

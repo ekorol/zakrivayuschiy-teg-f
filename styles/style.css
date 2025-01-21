@@ -22,8 +22,6 @@
 
 .header {
   width: clamp(375px, 100%, 700px);
-
-  /** min-height: clamp(327px, 39vh, 368px); **/
   margin: 100px auto;
   background-color: #fff;
   border: 2px solid #000;
@@ -130,7 +128,6 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  text-shadow: #000000ab 2px 3px 17px;
 }
 
 .card__action {
@@ -141,28 +138,41 @@
   align-items: center;
 }
 
+.button:focus-visible {
+  box-shadow: 2px 2px 0 0 #000;
+  transition: box-shadow 0.3s ease-in-out;
+  outline: none;
+}
+
 /***** КНОПКА LIKE *****/
 .card__like-button {
   max-height: 38px;
   min-width: 130px;
-  padding: 9px;
+  padding: 8px;
   border: 2px solid #000;
   background-color: #fff;
   position: relative;
+}
+
+.close-text {
+  transition: color 0.5s ease-in-out;
+  color: #000;
+  z-index: 2;
+  position: relative;
+}
+
+.button:hover .close-text {
+  z-index: 2;
+  color: #fff;
+  position: relative;
+  transition: color 0.5s ease-in-out;
 }
 
 .card__like-button:hover {
   cursor: pointer;
 }
 
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 0 #000;
-  transition: box-shadow 0.3s ease-in-out;
-  outline: none;
-}
-
-.card__like-button::before,
-.main__save-button::before {
+.button::before {
   content: "";
   height: 100%;
   width: 0%;
@@ -175,8 +185,7 @@
   transition: width 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
-.card__like-button:hover::before,
-.main__save-button:hover::before {
+.button:hover::before {
   content: "";
   height: 100%;
   width: 100%;
@@ -201,6 +210,12 @@
   position: relative;
   z-index: 2;
   transition: color 0.5s ease-in-out;
+}
+
+.button:hover .button__text,
+.button:hover .save-icon {
+  font-family: var(--accent-font);
+  color: #fff;
 }
 
 .card__icon-button {
@@ -330,7 +345,7 @@
   display: flex;
   font-family: var(--accent-font);
   border: 2px solid #000;
-  padding: 15px 20px;
+  padding: 15px;
   justify-content: center;
   font-size: 14px;
   line-height: 12.6px;
@@ -357,23 +372,10 @@
 }
 
 .save-icon {
+  color: #000;
   z-index: 2;
   position: relative;
   transition: color 0.5s ease-in-out;
-}
-
-.main__save-button:hover .save-icon {
-  color: #fff;
-  z-index: 3;
-  position: relative;
-}
-
-.main__save-button:hover .save-text {
-  mix-blend-mode: difference;
-  color: #fff;
-  z-index: 2;
-  position: relative;
-  display: inline-block;
 }
 
 dialog[open] {
@@ -387,7 +389,6 @@ dialog[open] {
   grid-template-columns: 60px 1fr;
   row-gap: 30px;
   align-items: center;
-  max-block-size: 191px;
   overflow: hidden;
 }
 
@@ -396,7 +397,6 @@ dialog[open] {
   font-size: 14px;
   line-height: 21px;
   text-transform: uppercase;
-  text-align: justify;
 }
 
 #dialog-id svg {
@@ -420,10 +420,16 @@ dialog:not([open]) {
   width: 100%;
   grid-column: span 2;
   max-height: 38px;
+  position: relative;
+  transition: color 0.5s ease-in-out;
 }
 
 .close:hover {
   cursor: pointer;
+  z-index: 6;
+  color: #fff;
+  position: relative;
+  transition: color 0.5s ease-in-out;
 }
 
 .visually-hidden {
@@ -435,18 +441,6 @@ dialog:not([open]) {
   padding: 0;
   overflow: hidden;
   clip-path: inset(0, 0, 0, 0);
-}
-
-.close-button {
-  position: absolute;
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  background-image: url(../svg/form-x.svg);
-  inset-block-start: 20px;
-  inset-inline-end: 20px;
-  inline-size: 20px;
-  aspect-ratio: 1/1;
 }
 
 ::backdrop {

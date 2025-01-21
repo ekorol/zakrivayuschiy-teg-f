@@ -22,7 +22,8 @@
 
 .header {
   width: clamp(375px, 100%, 700px);
-  min-height: clamp(327px, 39vh, 368px);
+
+  /** min-height: clamp(327px, 39vh, 368px); **/
   margin: 100px auto;
   background-color: #fff;
   border: 2px solid #000;
@@ -31,6 +32,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: clamp(120px, 30%, 128px) 0;
 }
 
 .header__cover-title {
@@ -207,6 +209,7 @@
   min-height: 100%;
   display: inline-block;
   padding: 0;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:hover {
@@ -222,26 +225,25 @@
   outline: none;
   border: 2px solid #000;
   border-radius: 0;
-  transition: border 0.3s ease;
 }
 
 /** НАВЕДЕНИЕ НА СЕРДЕЧКО **/
 .main-body {
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--contour);
-  transition: fill 0.3s 0.05s ease;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .core {
-  transition: fill 0.3s 0.03s ease;
+  transition: fill 0.3s 0.03s linear;
 }
 
 .card__icon-button:hover .core {
   fill: var(--contour);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .contour {
@@ -253,28 +255,28 @@
 
 .card__icon-button:active .main-body {
   fill: var(--heart-accent);
-  transition: fill 0.3s 0.05s ease;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:active .core {
   fill: var(--heart-accent);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 /** КЛИК ПО СЕРДЕЧКУ **/
 
 .like-icon.is-liked .contour {
   fill: var(--heart-accent);
-  transition: fill 0.3s 0.06s ease;
+  transition: fill 0.3s 0.06s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-accent);
-  transition: fill 0.3s 0.05s ease;
+  transition: fill 0.3s 0.05s linear;
 }
 .like-icon.is-liked .core {
   fill: var(--heart-accent);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked {
@@ -363,7 +365,6 @@
 .main__save-button:hover .save-icon {
   color: #fff;
   z-index: 3;
-  transition: color 0.5s ease-in-out;
   position: relative;
 }
 
@@ -373,7 +374,6 @@
   z-index: 2;
   position: relative;
   display: inline-block;
-  transition: color 0.5s ease-in-out;
 }
 
 dialog[open] {

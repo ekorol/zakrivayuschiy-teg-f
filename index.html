@@ -493,7 +493,7 @@
         class="main__save-button button"
       >
         <span class="button__text save-button">
-          <svg class="save-icon" viewBox="0 0 39 39">
+          <svg viewBox="0 0 39 39">
             <use xlink:href="svg/floppy.svg#floppy" />
           </svg>
           <span class="button__text">Сохранить на память</span>
@@ -504,7 +504,9 @@
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <h2 class="dialog__text">Вставьте дискету, чтобы продолжить</h2>
-        <button class="close button" type="button" onclick="window['dialog-id'].close();"><span class="button__text">OK</span></button>
+        <button class="close button" type="button" onclick="window['dialog-id'].close();">
+          <span class="button__text">OK</span>
+        </button>
       </dialog>
     </main>
     <script src="./scripts/like.js"></script>
